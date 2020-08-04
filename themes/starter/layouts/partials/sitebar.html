@@ -1,0 +1,9 @@
+<nav class="sidebar-nav" style="text-align: left;padding-left: 1em">
+    {{ range sort .Site.Pages  "URL"  }}
+        {{ if ne .Title "Categories" "Tags" }}
+            <a href="{{ .URL }}" title="{{ .Title }}" style="font-size: 1.2em">
+            {{- .Name -}}
+            </a><br />
+        {{ end }}
+    {{ end }}
+</nav>

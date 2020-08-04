@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="{{ .Site.LanguageCode | default "en-us" }}">
+  <head>
+    <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} // {{ .Site.Title }}{{ end }}</title>
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <header>
+      <h1>{{ .Site.Title }}</h1>
+
+      {{ partial "sitebar" . }}
+
+      </div>
+    </header>
+    <main>
+      {{ block "main" . }}
+        {{ .Content }}
+      {{ end }}
+    </main>
+  </body>
+</html>
